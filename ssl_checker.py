@@ -49,7 +49,7 @@ def get_ssl_expiry_date(domain, local_ca_cert):
                 # Extract the issuer organization name correctly
                 issuer_components = x509_cert.get_issuer().get_components()
                 issuer_dict = {key.decode('utf-8'): value.decode('utf-8') for key, value in issuer_components}
-                issuer = issuer_dict.get('O', 'BRITAMGROUP-BAEQDCERTSVR1-CA')
+                issuer = issuer_dict.get('O', 'LOCAL-CA')
 
                 # Check if the certificate is signed by the local CA
                 local_ca_issuer_components = local_ca_cert.get_subject().get_components()
